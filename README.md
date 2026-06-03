@@ -1,100 +1,90 @@
-# House-price-prediction
-This project focuses on predicting house prices using regression models such as Linear Regression, Ridge, and Lasso. It includes data preprocessing, feature engineering, and model evaluation to identify the best-performing model.
+# 🏠 House Price Prediction — Regression Modelling
 
-# 🏡 House Price Prediction using Machine Learning
+> Predicting property prices using feature engineering and regularized regression.
 
-## 📌 Project Overview
-This project aims to predict house prices using Machine Learning regression techniques.  
-It covers the complete ML pipeline from data preprocessing to model evaluation.
-
----
-
-## 🎯 Objective
-To build and compare regression models to accurately predict house prices based on various features.
+![Python](https://img.shields.io/badge/Python-3.9+-0f2027?style=flat-square&logo=python&logoColor=white)
+![Scikit-learn](https://img.shields.io/badge/Scikit--learn-Regression-F7931E?style=flat-square&logo=scikit-learn&logoColor=white)
+![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-F37626?style=flat-square&logo=jupyter&logoColor=white)
 
 ---
 
-## 📊 Dataset
-- Dataset: House Prices Dataset (Kaggle)
-- Total Rows: 1460
-- Features: 80+
+## 🚩 Problem
+
+Accurate house price estimation is critical for buyers, sellers, and real estate platforms. Simple models overfit noise; regularization helps generalize to unseen properties.
 
 ---
 
-## 🧠 Workflow
+## ✅ Approach
 
-### 1. Data Preprocessing
-- Handled missing values
-- Removed irrelevant columns
-- Treated outliers (GrLivArea)
-- Applied log transformation to target variable
-
-### 2. Exploratory Data Analysis (EDA)
-- Identified important features using correlation
-- Visualized relationships (GrLivArea vs SalePrice, etc.)
-- Detected skewness in SalePrice
-
-### 3. Feature Engineering
-- One-hot encoding for categorical variables
-- Feature selection based on correlation and importance
+Compared three regression models — Linear Regression as the baseline, then Ridge and Lasso as regularized alternatives — with careful feature engineering to improve prediction accuracy.
 
 ---
 
-## 🤖 Models Used
+## 📊 Models compared
 
-- Linear Regression
-- Ridge Regression
-- Lasso Regression
-
----
-
-## 📈 Model Evaluation
-
-Evaluation Metric:
-- RMSE (Root Mean Squared Error)
-
-| Model              | RMSE  |
-|------------------|------|
-| Linear Regression | 0.130 |
-| Ridge Regression  | **0.124** ✅ |
-| Lasso Regression  | 0.139 |
+| Model | Key Property | Use Case |
+|---|---|---|
+| Linear Regression | No regularization (baseline) | Simple relationships |
+| Ridge (L2) | Shrinks all coefficients | Multicollinear features |
+| Lasso (L1) | Zeroes out weak features | Feature selection |
 
 ---
 
-## 💡 Key Insights
+## ⚙️ Pipeline
 
-- Ridge Regression performed best due to handling multicollinearity
-- Lasso removed some useful features, reducing performance
-- Log transformation improved model performance significantly
-- Important features:
-  - OverallQual
-  - GrLivArea
-  - GarageCars
-  - TotalBsmtSF
-
----
-
-## 🛠️ Technologies Used
-
-- Python
-- Pandas
-- NumPy
-- Matplotlib / Seaborn
-- Scikit-learn
+```
+Raw Housing Data
+      ↓
+Exploratory Data Analysis
+      ↓
+Data Cleaning + Missing Value Treatment
+      ↓
+Feature Engineering
+      ↓
+Model Training (Linear / Ridge / Lasso)
+      ↓
+Hyperparameter Tuning (alpha for Ridge/Lasso)
+      ↓
+Evaluation: RMSE · MAE · R² Score
+```
 
 ---
 
-## 🚀 How to Run
+## 🔍 Key techniques
+
+- Log transformation on skewed price distribution
+- Encoding categorical features (location, property type)
+- Cross-validation to prevent overfitting
+- Alpha tuning via GridSearchCV for Ridge and Lasso
+
+---
+
+## 🛠️ Tech stack
+
+`Python` · `Scikit-learn` · `Pandas` · `NumPy` · `Matplotlib` · `Seaborn`
+
+---
+
+## 🚀 Run locally
 
 ```bash
-# Clone the repository
-git clone https://github.com/muneer-ahmad10/house-price-prediction.git
-
-# Navigate to project folder
-cd house-price-prediction
-
-# Install dependencies
+git clone https://github.com/muneer-ahmad10/House-price-prediction.git
+cd House-price-prediction
 pip install -r requirements.txt
-
-# Run notebook
 jupyter notebook
+```
+
+---
+
+## 🔮 Planned improvements
+
+- [ ] XGBoost and LightGBM comparison
+- [ ] Geospatial feature engineering (distance to amenities)
+- [ ] Streamlit deployment for live price prediction
+- [ ] SHAP values for feature importance explainability
+
+---
+
+## 👨‍💻 Author
+
+**Muneer Ahmad Dar** · [LinkedIn](https://linkedin.com/in/muneerahmad-826363267) · [GitHub](https://github.com/muneer-ahmad10)
